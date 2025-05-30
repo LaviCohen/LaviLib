@@ -36,7 +36,7 @@ import le.utils.PictureUtilities;
 import le.utils.VarHolder;
 
 /**
- * Replacement for @see java.swing.JOptionPane, to support another LaviExtra
+ * Replacement for @see java.swing.JOptionPane, to support another LaviLןנ
  * features, such as translation and themes.
  */
 public class LDialogs {

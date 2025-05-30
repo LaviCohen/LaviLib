@@ -21,6 +21,7 @@ import le.log.ExceptionUtils;
 /**
  * Represents the website of the product to use its web services.
  * */
+@SuppressWarnings("deprecation")
 public abstract class AbstractWebsite {
 	protected String webAddress;
 	
