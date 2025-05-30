@@ -15,11 +15,17 @@ public class LFileChooserPanel extends JPanel{
 
 	private static final long serialVersionUID = 1L;
 
+	public interface SelectionListener{
+		public void fileSelected(File f);
+	}
+	
 	JLabel descriptionLabel = new JLabel();
 	JTextField pathField = new JTextField();
 	JButton browse = new JButton("Browse");
 	
-	public LFileChooserPanel(String description) {
+	SelectionListener selectionListener = null;
+	
+	public LFileChooserPanel(String description, int fileSelectionMode) {
 		super(new BorderLayout(5, 0));
 		
 		if (description != null) {
@@ -32,9 +38,13 @@ public class LFileChooserPanel extends JPanel{
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				JFileChooser jfc = new JFileChooser(pathField.getText());
+				jfc.setFileSelectionMode(fileSelectionMode);
 				int option = jfc.showOpenDialog(LFileChooserPanel.this);
 				if (option == JFileChooser.APPROVE_OPTION) {
 					pathField.setText(jfc.getSelectedFile().getAbsolutePath());
+					if (selectionListener != null) {
+						selectionListener.fileSelected(getSelectedFile());
+					}
 				}
 			}
 		});
@@ -43,5 +53,13 @@ public class LFileChooserPanel extends JPanel{
 	
 	public File getSelectedFile() {
 		return new File(pathField.getText());
+	}
+
+	public SelectionListener getSelectionListener() {
+		return selectionListener;
+	}
+
+	public void setSelectionListener(SelectionListener selectionListener) {
+		this.selectionListener = selectionListener;
 	}
 }
