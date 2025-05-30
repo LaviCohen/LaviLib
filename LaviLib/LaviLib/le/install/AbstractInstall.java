@@ -1,5 +1,6 @@
 package le.install;
 
+import java.awt.Component;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
@@ -12,6 +13,8 @@ import java.util.Enumeration;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
+import le.gui.dialogs.LDialogs;
+
 /**
  * AbstractInstall class is the way to access your installation files easily.
  * This is an abstract class, which meant to be extended, to customize the "install" method.
@@ -22,6 +25,25 @@ public abstract class AbstractInstall {
 		this.path = path;
 	}
 	public abstract boolean install() throws InstallationException;
+	public void installIfNotInstalled(Component owner, String message) throws InstallationException {
+		if (!this.isInstalled()) {
+			int answer = LDialogs.showConfirmDialog(owner, message);
+			switch (answer) {
+			case LDialogs.YES_OPTION:
+				if (this.install()) {
+					LDialogs.showMessageDialog(owner, "Install has been completed successfully!");
+				} else {
+					LDialogs.showMessageDialog(owner, "Error: install failed", "Install Error",
+							LDialogs.ERROR_MESSAGE);
+					return;
+				}
+				break;
+			default:
+				System.exit(0);
+				return;
+			}
+		}
+	}
 	public boolean isInstalled() {
 		return new File(path).exists();
 	}
