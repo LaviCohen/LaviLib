@@ -235,19 +235,8 @@ public class LDialogs {
 		buttons.setBorder(new EmptyBorder(15, 0, 15, 0));
 		d.add(buttons, BorderLayout.SOUTH);
 		d.pack();
-		if (owner == null) {
-			d.setLocation(Toolkit.getDefaultToolkit().getScreenSize().width / 2 - d.getWidth() / 2,
-					Toolkit.getDefaultToolkit().getScreenSize().height / 2 - d.getHeight() / 2);
-		}else {
-			d.setLocation(owner.getWidth() / 2 - d.getWidth() / 2 + owner.getX(),
-					owner.getHeight() / 2 - d.getHeight() / 2 + owner.getY());
-		}
+		locateDialog(d, owner);
 		d.setResizable(false);
-		if (owner != null) {
-			Point p = new Point(owner.getWidth() / 2, owner.getHeight() / 2);
-			SwingUtilities.convertPointToScreen(p, owner);
-			d.setLocation(p.x - d.getWidth() / 2, p.y - d.getHeight() / 2);
-		}
 		focused.grabFocus();
 		d.setVisible(true);
 		return option.getValue();
@@ -288,17 +277,22 @@ public class LDialogs {
 		button.setBounds(145, label.getPreferredSize().height + 40, 60, 30);
 
 		d.setSize(350, label.getPreferredSize().height + 130);
-		if (owner == null) {
-			d.setLocation(Toolkit.getDefaultToolkit().getScreenSize().width / 2 - d.getWidth() / 2,
-					Toolkit.getDefaultToolkit().getScreenSize().height / 2 - d.getHeight() / 2);
-		}
+		locateDialog(d, owner);
 		d.setResizable(false);
-		if (owner != null) {
-			Point p = new Point(owner.getWidth() / 2, owner.getHeight() / 2);
-			SwingUtilities.convertPointToScreen(p, owner);
-			d.setLocation(p.x - d.getWidth() / 2, p.y - d.getHeight() / 2);
-		}
 		d.setVisible(true);
 		return optionBox.getSelectedItem();
+	}
+	private static void locateDialog(JDialog dialog, Component owner) {
+		if (owner == null) {
+			dialog.setLocation(Toolkit.getDefaultToolkit().getScreenSize().width / 2 - dialog.getWidth() / 2,
+					Toolkit.getDefaultToolkit().getScreenSize().height / 2 - dialog.getHeight() / 2);
+		}else {
+			Point p = new Point(owner.getWidth() / 2, owner.getHeight() / 2);
+			SwingUtilities.convertPointToScreen(p, owner);
+			dialog.setLocation(p.x - dialog.getWidth() / 2, p.y - dialog.getHeight() / 2);
+		}
+		if (dialog.getX() < 0 || dialog.getY() < 0) {
+			dialog.setLocation(dialog.getX() < 0 ? 0 : dialog.getX(), dialog.getY() < 0 ? 0 : dialog.getY());
+		}
 	}
 }
