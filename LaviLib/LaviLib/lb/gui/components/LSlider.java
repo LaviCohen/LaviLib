@@ -71,14 +71,7 @@ public class LSlider extends JPanel{
 				LSlider.this.doLayout();
 			}
 		});
-		SwingUtilities.invokeLater(new Runnable() {
-			
-			@Override
-			public void run() {
-				LSlider.this.field.setText(defaultValue * valueFactor + "");
-				LSlider.this.doLayout();
-			}
-		});
+		field.setText(defaultValue * valueFactor + "");
 	}
 	private double round(double value) {
 		return ((int)(value * roundFactor)) / (double)roundFactor;
