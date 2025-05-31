@@ -1,4 +1,4 @@
-package le.install;
+package lb.install;
 
 import java.io.File;
 import java.io.FileInputStream;

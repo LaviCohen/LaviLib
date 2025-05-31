@@ -1,4 +1,4 @@
-package le.gui.components;
+package lb.gui.components;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -13,7 +13,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
-import le.languages.AbstractTranslator;
+import lb.languages.AbstractTranslator;
 
 /**
  * LSlider is a component which provides a label before the slider to the slider's subject, and also a text field next to the slider,

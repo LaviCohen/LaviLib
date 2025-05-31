@@ -1,4 +1,4 @@
-package le.log;
+package lb.log;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -6,8 +6,7 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
 
-
-import le.install.AbstractInstall;
+import lb.install.AbstractInstall;
 
 /**
  * This class used for logging the program's activity.

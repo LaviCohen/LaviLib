@@ -1,4 +1,4 @@
-package le.web;
+package lb.web;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -15,8 +15,7 @@ import java.nio.file.Files;
 import java.nio.file.StandardCopyOption;
 import java.util.Scanner;
 
-
-import le.log.ExceptionUtils;
+import lb.log.ExceptionUtils;
 
 /**
  * Represents the website of the product to use its web services.

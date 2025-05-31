@@ -1,4 +1,4 @@
-package le.gui.components;
+package lb.gui.components;
 
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;

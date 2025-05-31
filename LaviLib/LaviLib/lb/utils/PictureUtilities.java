@@ -1,4 +1,4 @@
-package le.utils;
+package lb.utils;
 
 import java.awt.Graphics2D;
 import java.awt.Image;

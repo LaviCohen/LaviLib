@@ -1,20 +1,21 @@
-package le.gui.components;
+package lb.gui.components;
 
 import java.awt.Color;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 
-import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 
 /**
- * LTextArea is a component which provides a feature of placeholder text to the original JTextArea.
+ * LTextField is a component which provides a feature of placeholder text to the original JTextField.
  * */
-public class LTextArea extends JTextArea {
+public class LTextField extends JTextField {
 	private static final long serialVersionUID = 1L;
 	private String hiddenText;
 	private Color hiddenTextColor = Color.GRAY;
 	private Color normalTextColor = Color.BLACK;
-	public LTextArea(String hiddenText) {
+	public LTextField(String hiddenText) {
 		this.hiddenText = hiddenText;
 		setForeground(hiddenTextColor);
 		setText(hiddenText);

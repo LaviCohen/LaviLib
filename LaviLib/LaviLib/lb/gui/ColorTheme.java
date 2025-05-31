@@ -1,4 +1,4 @@
-package le.gui;
+package lb.gui;
 
 import java.awt.Color;
 import java.awt.Component;

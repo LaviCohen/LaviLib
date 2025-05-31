@@ -1,4 +1,4 @@
-package le.gui.layouts;
+package lb.gui.layouts;
 
 import java.awt.Component;
 import java.awt.Container;

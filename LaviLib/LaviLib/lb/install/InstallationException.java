@@ -1,4 +1,4 @@
-package le.install;
+package lb.install;
 
 /**
  * The Exception which thrown due an exception during installation.

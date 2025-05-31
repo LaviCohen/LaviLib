@@ -1,4 +1,4 @@
-package le.gui.components;
+package lb.gui.components;
 
 import java.awt.Color;
 import java.awt.event.ActionListener;

@@ -1,4 +1,4 @@
-package le.languages;
+package lb.languages;
 
 import java.util.HashMap;
 import java.util.Scanner;

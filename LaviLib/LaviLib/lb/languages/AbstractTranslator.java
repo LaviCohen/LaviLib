@@ -1,11 +1,11 @@
-package le.languages;
+package lb.languages;
 
 import java.awt.BorderLayout;
 import java.awt.ComponentOrientation;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import le.install.AbstractInstall;
+import lb.install.AbstractInstall;
 
 /**
  * The AbstractTranslator class is used to translate String to different languages.

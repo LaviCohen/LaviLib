@@ -1,4 +1,4 @@
-package le.gui.components;
+package lb.gui.components;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -33,9 +33,9 @@ import javax.swing.event.DocumentListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 
-import le.gui.ColorTheme;
-import le.gui.dialogs.LDialogs;
-import le.languages.AbstractTranslator;
+import lb.gui.ColorTheme;
+import lb.gui.dialogs.LDialogs;
+import lb.languages.AbstractTranslator;
 
 /**
  * LSearchableComboBox is a component which provides combo box which the user can type in its field and search in the list

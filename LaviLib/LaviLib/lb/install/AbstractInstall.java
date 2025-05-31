@@ -1,4 +1,4 @@
-package le.install;
+package lb.install;
 
 import java.awt.Component;
 import java.io.DataOutputStream;
@@ -13,7 +13,7 @@ import java.util.Enumeration;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
-import le.gui.dialogs.LDialogs;
+import lb.gui.dialogs.LDialogs;
 
 /**
  * AbstractInstall class is the way to access your installation files easily.

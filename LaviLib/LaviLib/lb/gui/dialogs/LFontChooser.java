@@ -1,4 +1,4 @@
-package le.gui.dialogs;
+package lb.gui.dialogs;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -18,11 +18,11 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 
-import le.gui.ColorTheme;
-import le.gui.components.LSearchableComboBox;
-import le.gui.components.LSlider;
-import le.gui.components.LSearchableComboBox.Styler;
-import le.gui.components.LSearchableComboBox.StylingManager;
+import lb.gui.ColorTheme;
+import lb.gui.components.LSearchableComboBox;
+import lb.gui.components.LSlider;
+import lb.gui.components.LSearchableComboBox.Styler;
+import lb.gui.components.LSearchableComboBox.StylingManager;
 /**
  * JColorChooser provides a pane of controls designed to allow a user to manipulate and select a font.
  * The user can choose the family, size and style, and see a preview before selecting.

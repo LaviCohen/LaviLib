@@ -1,4 +1,4 @@
-package le.utils;
+package lb.utils;
 
 public class Utils {
 

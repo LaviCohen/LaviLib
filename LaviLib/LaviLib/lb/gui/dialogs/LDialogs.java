@@ -1,4 +1,4 @@
-package le.gui.dialogs;
+package lb.gui.dialogs;
 
 import java.awt.Dialog.ModalityType;
 import java.awt.BorderLayout;
@@ -30,10 +30,10 @@ import javax.swing.SwingUtilities;
 import javax.swing.border.EmptyBorder;
 import javax.swing.border.LineBorder;
 
-import le.gui.ColorTheme;
-import le.gui.components.LTextField;
-import le.utils.PictureUtilities;
-import le.utils.VarHolder;
+import lb.gui.ColorTheme;
+import lb.gui.components.LTextField;
+import lb.utils.PictureUtilities;
+import lb.utils.VarHolder;
 
 /**
  * Replacement for @see java.swing.JOptionPane, to support another LaviLןנ
@@ -59,11 +59,11 @@ public class LDialogs {
 
 	static {
 		try {
-			warningIcon = getIcon(ImageIO.read(LDialogs.class.getResourceAsStream("/le/resources/Warning.png")), 50,
+			warningIcon = getIcon(ImageIO.read(LDialogs.class.getResourceAsStream("/lb/resources/Warning.png")), 50,
 					50);
-			errorIcon = getIcon(ImageIO.read(LDialogs.class.getResourceAsStream("/le/resources/Error.png")), 50, 50);
-			infoIcon = getIcon(ImageIO.read(LDialogs.class.getResourceAsStream("/le/resources/Info.png")), 50, 50);
-			questionIcon = getIcon(ImageIO.read(LDialogs.class.getResourceAsStream("/le/resources/Question.png")), 50,
+			errorIcon = getIcon(ImageIO.read(LDialogs.class.getResourceAsStream("/lb/resources/Error.png")), 50, 50);
+			infoIcon = getIcon(ImageIO.read(LDialogs.class.getResourceAsStream("/lb/resources/Info.png")), 50, 50);
+			questionIcon = getIcon(ImageIO.read(LDialogs.class.getResourceAsStream("/lb/resources/Question.png")), 50,
 					50);
 		} catch (IOException e) {
 			e.printStackTrace();

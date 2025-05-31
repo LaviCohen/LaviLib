@@ -1,4 +1,4 @@
-package le.log;
+package lb.log;
 
 import java.util.Calendar;
 
