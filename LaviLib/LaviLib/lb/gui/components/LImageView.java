@@ -69,7 +69,6 @@ public class LImageView extends JPanel{
 	}
 
 	public void setImage(Image image) {
-		System.out.println("Image Set");
 		this.image = image;
 		enforcePolicy();
 		repaint();
