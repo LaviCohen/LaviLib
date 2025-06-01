@@ -8,11 +8,11 @@ public class VarHolder<T> {
 		this.value = value;
 	}
 	
-	public void setValue(T vlaue) {
+	public synchronized void setValue(T vlaue) {
 		this.value = vlaue;
 	}
 	
-	public T getValue() {
+	public synchronized T getValue() {
 		return value;
 	}
 }

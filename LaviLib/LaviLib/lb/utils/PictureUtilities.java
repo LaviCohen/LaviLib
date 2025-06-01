@@ -1,5 +1,6 @@
 package lb.utils;
 
+import java.awt.Dimension;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.RenderingHints;
@@ -49,6 +50,10 @@ public class PictureUtilities {
 				bufferedImage.getType());
 		ret.createGraphics().drawImage(bufferedImage, 0, 0, null);
 		return ret;
+	}
+
+	public static BufferedImage getScaledImage(BufferedImage bufferedImage, Dimension dimension) {
+		return getScaledImage(bufferedImage, dimension.width, dimension.height);
 	}
 
 }
