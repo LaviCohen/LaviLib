@@ -72,7 +72,7 @@ public abstract class AbstractInstall {
 			return null;
 		}
 	}
-	public void writeToFile(File f, String text) {
+	public static void writeToFile(File f, String text) {
 		try {
 			FileOutputStream fos = new FileOutputStream(f);
 			DataOutputStream dos = new DataOutputStream(fos);
@@ -83,7 +83,7 @@ public abstract class AbstractInstall {
 			e.printStackTrace();
 		}
 	}
-	public void unZip(String pathToZip, String targetFolder) throws IOException {
+	public static void unZip(String pathToZip, String targetFolder) throws IOException {
 		try (ZipFile zipFile = new ZipFile(pathToZip)) {
 			  Enumeration<? extends ZipEntry> entries = zipFile.entries();
 			  while (entries.hasMoreElements()) {
@@ -101,7 +101,7 @@ public abstract class AbstractInstall {
 			  }
 		}
 	}
-	public void copyDirectory(File sourceLocation , File targetLocation)
+	public static void copyDirectory(File sourceLocation , File targetLocation)
 		    throws IOException {
 		if (sourceLocation.isDirectory()) {
 			if (!targetLocation.exists()) {
@@ -115,7 +115,7 @@ public abstract class AbstractInstall {
 			Files.copy(sourceLocation.toPath(), new FileOutputStream(targetLocation));
 		}
 	}
-	public void removeDirectory(File f) {
+	public static void removeDirectory(File f) {
 		if (f.isDirectory()) {
 			String[] children = f.list();
 			for (int i = 0; i < children.length; i++) {

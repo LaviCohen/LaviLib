@@ -34,6 +34,7 @@ public class LSlider extends JPanel{
 		this(subject, (int) (minValue / valueFactor), (int) (maxValue / valueFactor),
 				(int) (defaultValue / valueFactor));
 		this.valueFactor = valueFactor;
+		field.setText(defaultValue + "");
 	}
 	public LSlider(String subject, int minValue, int maxValue, int defaultValue) {
 		super(new BorderLayout());

@@ -33,13 +33,15 @@ public interface ColorTheme {
 			if (component instanceof JTextComponent) {
 				component.setBackground(getBackgroundColor().brighter());
 				component.setForeground(getTextColor());
-			}else if(component instanceof JButton){	
-				component.setBackground(getBackgroundColor().darker());
-				component.setForeground(getTextColor());
 			}else{
 				if (component instanceof JComponent) {
 					((JComponent) component).setOpaque(true);
-					if (!isAffectingButtons() || !(component instanceof JButton)) {
+					if(component instanceof JButton){
+						if (isAffectingButtons()) {
+							component.setBackground(getBackgroundColor().darker());
+							component.setForeground(getTextColor());
+						}
+					} else {
 						component.setBackground(getBackgroundColor());
 						component.setForeground(getTextColor());
 					}
