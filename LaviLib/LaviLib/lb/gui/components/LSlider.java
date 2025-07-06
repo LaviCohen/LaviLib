@@ -34,7 +34,7 @@ public class LSlider extends JPanel{
 		this(subject, (int) (minValue / valueFactor), (int) (maxValue / valueFactor),
 				(int) (defaultValue / valueFactor));
 		this.valueFactor = valueFactor;
-		field.setText(defaultValue + "");
+		updateLabel(defaultValue);
 	}
 	public LSlider(String subject, int minValue, int maxValue, int defaultValue) {
 		super(new BorderLayout());
@@ -50,11 +50,7 @@ public class LSlider extends JPanel{
 			@Override
 			public void stateChanged(ChangeEvent e) {
 				double newVal = round(LSlider.this.getValue());
-				if (newVal == (int)newVal) {
-					field.setText((int)newVal + "");					
-				} else {
-					field.setText(newVal + "");
-				}
+				updateLabel(newVal);
 				SwingUtilities.invokeLater(new Runnable() {
 					
 					@Override
@@ -72,7 +68,7 @@ public class LSlider extends JPanel{
 				LSlider.this.doLayout();
 			}
 		});
-		field.setText(defaultValue * valueFactor + "");
+		updateLabel(defaultValue);
 	}
 	private double round(double value) {
 		return ((int)(value * roundFactor)) / (double)roundFactor;
@@ -96,6 +92,13 @@ public class LSlider extends JPanel{
 			this.getSubject().setForeground(fg);
 			this.getSlider().setForeground(fg);
 			this.field.setForeground(fg);
+		}
+	}
+	private void updateLabel(double newVal) {
+		if (newVal == (int) newVal) {
+			field.setText((int) newVal + "");					
+		} else {
+			field.setText(newVal + "");
 		}
 	}
 	public JLabel getSubject() {
