@@ -52,8 +52,8 @@ public class PictureUtilities {
 		return ret;
 	}
 
-	public static BufferedImage getScaledImage(BufferedImage bufferedImage, Dimension dimension) {
-		return getScaledImage(bufferedImage, dimension.width, dimension.height);
+	public static BufferedImage getScaledImage(Image image, Dimension dimension) {
+		return getScaledImage(image, dimension.width, dimension.height);
 	}
 
 }

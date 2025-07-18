@@ -67,13 +67,14 @@ public class LImageView extends JPanel {
 				}
 				g2.drawImage(image, x, y, imageDimension.width, imageDimension.height, null);
 				g2.dispose();
-				g.drawImage(image, 0, 0, null);
 				this.setPreferredSize(imageDimension);
+				System.out.println("Image Dim:" + imageDimension + ", Pref:" + getPreferredSize());
 			}
 		};
 		jsp = new JScrollPane(view);
 		this.add(jsp);
 		this.add(zoomSlider, BorderLayout.SOUTH);
+		setImage(image);
 	}
 
 	protected Dimension getImageDimension() {
@@ -86,30 +87,34 @@ public class LImageView extends JPanel {
 		enforcePolicy();
 		repaint();
 	}
+	
+	public Image getImage() {
+		return image;
+	}
 
 	private void enforcePolicy() {
-		if (resizePolicy != DONT_RESIZE) {
-			Dimension imageDimension = new Dimension(image.getWidth(null), image.getHeight(null));
-			Dimension panelDimension = view.getSize();
-			if (panelDimension.width == 0 || panelDimension.height == 0) {
-				return;
-			}
-			double widthRatio = panelDimension.width / imageDimension.width;
-			double heightRatio = panelDimension.height / imageDimension.height;
-			if (widthRatio > heightRatio) {
-				if (resizePolicy == FIT_SMALLER_AXIS) {
-					zoomSlider.getSlider().setValue((int) (heightRatio * 100));
-				} else {
-					zoomSlider.getSlider().setValue((int) (widthRatio * 100));
-				}
-			} else {
-				if (resizePolicy == FIT_SMALLER_AXIS) {
-					zoomSlider.getSlider().setValue((int) (widthRatio * 100));
-				} else {
-					zoomSlider.getSlider().setValue((int) (heightRatio * 100));
-				}
-			}
-
-		}
+//		if (resizePolicy != DONT_RESIZE && image != null) {
+//			Dimension imageDimension = new Dimension(image.getWidth(null), image.getHeight(null));
+//			Dimension panelDimension = view.getSize();
+//			if (panelDimension.width == 0 || panelDimension.height == 0) {
+//				return;
+//			}
+//			double widthRatio = panelDimension.width / imageDimension.width;
+//			double heightRatio = panelDimension.height / imageDimension.height;
+//			if (widthRatio > heightRatio) {
+//				if (resizePolicy == FIT_SMALLER_AXIS) {
+//					zoomSlider.getSlider().setValue((int) (heightRatio * 100));
+//				} else {
+//					zoomSlider.getSlider().setValue((int) (widthRatio * 100));
+//				}
+//			} else {
+//				if (resizePolicy == FIT_SMALLER_AXIS) {
+//					zoomSlider.getSlider().setValue((int) (widthRatio * 100));
+//				} else {
+//					zoomSlider.getSlider().setValue((int) (heightRatio * 100));
+//				}
+//			}
+//
+//		}
 	}
 }
